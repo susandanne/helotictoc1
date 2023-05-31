@@ -36,13 +36,13 @@ class GameActivity2 : AppCompatActivity() {
     fun playGameonreal(cellid: Int,buselected: Button){
      if(activeplayer==1){
          buselected.text="X"
-         buselected.setBackgroundResource(R.color.yellow)
+         buselected.setBackgroundResource(R.drawable.plaground)
          player1.add(cellid)
          activeplayer=2
      }
         else{
          buselected.text="o"
-         buselected.setBackgroundResource(R.color.green)
+         buselected.setBackgroundResource(R.drawable.playground2)
          player2.add(cellid)
          activeplayer=1
         }
