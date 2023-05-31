@@ -27,6 +27,24 @@ class GameActivity2 : AppCompatActivity() {
             R.id.bu9->cellId=9
 
         }
-        Log.d("data",cellId.toString())
+        playGameonreal(cellId,buselected)
+//        Log.d("data : cellid",cellId.toString())
+    }
+     var activeplayer=1
+     var player1=ArrayList<Int>()
+     var player2=ArrayList<Int>()
+    fun playGameonreal(cellid: Int,buselected: Button){
+     if(activeplayer==1){
+         buselected.text="X"
+         buselected.setBackgroundResource(R.color.yellow)
+         player1.add(cellid)
+         activeplayer=2
+     }
+        else{
+         buselected.text="o"
+         buselected.setBackgroundResource(R.color.green)
+         player2.add(cellid)
+         activeplayer=1
+        }
     }
 }
