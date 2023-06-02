@@ -1,13 +1,14 @@
 package com.example.helotictoc1
 
+import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
+import android.view.Window
 import android.widget.Button
-import android.widget.Toast
 
 class GameActivity2 : AppCompatActivity() {
+    private val dialog=Dialog(this)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game2)
@@ -109,13 +110,29 @@ class GameActivity2 : AppCompatActivity() {
             winner=2
         }
         if (winner==1){
-            Toast.makeText(this,"palyer 1 win the game",Toast.LENGTH_LONG).show()
+
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+            dialog.setCancelable(false)
+            dialog.setContentView(R.layout.winner_dialogue_box)
+
+            dialog.show()
+
         }
       else if (winner==2){
-            Toast.makeText(this,"player 2 win the game",Toast.LENGTH_SHORT).show()
+            val dialog=Dialog(this)
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+            dialog.setCancelable(false)
+            dialog.setContentView(R.layout.winner_dialogue_box)
+
+            dialog.show()
         }
 
-
+//        if (winner==1){
+//            Toast.makeText(this,"palyer 1 win the game",Toast.LENGTH_LONG).show()
+//        }
+//        else if (winner==2){
+//            Toast.makeText(this,"player 2 win the game",Toast.LENGTH_SHORT).show()
+//        }
 
 
     }
